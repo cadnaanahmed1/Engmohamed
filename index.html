@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Mahad Muse - Accounting & Finance Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2c5282;
+            --accent-color: #4299e1;
+            --light-color: #edf2f7;
+            --text-dark: #2d3748;
+            --text-light: #718096;
+            --success-color: #38a169;
+            --transition: all 0.3s ease;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header and Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(26, 54, 93, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo i {
+            color: var(--accent-color);
+            font-size: 1.8rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .menu-toggle:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://picsum.photos/seed/finance/1920/1080.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: #f8fafc;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: var(--shadow-xl);
+            margin-bottom: 2rem;
+            object-fit: cover;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--accent-color);
+            font-weight: 300;
+            min-height: 1.5rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background-color: #3182ce;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover {
+            transform: scale(1.03);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* Experience Section */
+        .experience {
+            background-color: #f8fafc;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--accent-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+
+        .timeline-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--accent-color);
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: var(--shadow-md);
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .right::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .timeline-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .date {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: rgba(66, 153, 225, 0.1);
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .timeline-content ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .timeline-content ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .timeline-content ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-color);
+            font-weight: bold;
+        }
+
+        /* Skills Section */
+        .skills {
+            background-color: white;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background-color: #f8fafc;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--accent-color), var(--primary-color));
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .skill-card:hover .skill-icon {
+            transform: scale(1.1);
+            color: var(--primary-color);
+        }
+
+        .skill-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background-color: #e2e8f0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--accent-color), var(--primary-color));
+            border-radius: 5px;
+            width: 0;
+            transition: width 1.5s ease;
+        }
+
+        /* Education Section */
+        .education {
+            background-color: #f8fafc;
+        }
+
+        .education-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .education-card-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-card-header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+        }
+
+        .education-card-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .education-card-header .institution {
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+
+        .education-card-body {
+            padding: 1.5rem;
+        }
+
+        .education-card-body p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-card-body .year {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: rgba(66, 153, 225, 0.1);
+            color: var(--accent-color);
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Languages Section */
+        .languages {
+            background-color: white;
+        }
+
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .language-item {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 10px;
+            background-color: #f8fafc;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .language-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+
+        .language-item:hover::before {
+            opacity: 1;
+        }
+
+        .language-item > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .language-item:hover {
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .language-item i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+
+        .language-item:hover i {
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .language-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .language-item .proficiency {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .language-item:hover .proficiency {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://picsum.photos/seed/contact/1920/1080.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .contact .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact .section-title h2 {
+            color: white;
+        }
+
+        .contact .section-title h2::after {
+            background-color: var(--accent-color);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.5s ease;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+            
+            .left::after, .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: var(--shadow-md);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: var(--shadow-md);
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Notification Toast */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background-color: var(--success-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            box-shadow: var(--shadow-lg);
+            z-index: 9999;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-chart-line"></i>
+                <span>Mohamed M.</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#languages">Languages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <img src="/public/WhatsApp Image 2026-01-27 at 8.01.10 PM.jpeg" alt="Mohamed Mahad Muse" class="profile-img">
+                <h1>Mohamed Mahad Muse</h1>
+                <p class="subtitle">Accounting & Finance Professional</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                    <a href="#" class="btn btn-outline" id="downloadCV">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content fade-in">
+                <div class="about-image">
+                    <img src="/public/WhatsApp Image 2026-01-27 at 8.01.10 PM.jpeg" alt="Mohamed at work">
+                </div>
+                <div class="about-text">
+                   <h3>Results-driven Accounting Professional</h3>
+                    <p>Results-driven accounting professional with a Bachelor's Degree in Accounting and Finance from Somali National University and currently an ACCA student with a strong foundation in financial accounting principles. Proficient in Cloud Accounting systems including Odoo ERP, QuickBooks Online and Desktop, Excel Accounting, and Point of Sale (POS) systems.</p>
+                    <p>Skilled in data analysis using Excel and proficient in Microsoft Office (Word, Excel, PowerPoint), with many of these skills acquired through training at Client Care Training Institute. Adept at streamlining financial processes, managing accounts efficiently, and leveraging modern accounting software to deliver accurate reporting and support strategic business decisions.</p>
+                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Work Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>SAAD Accounting & Consultancy</h3>
+                        <span class="date">June 2023 - Present</span>
+                        <ul>
+                            <li>Supported preparation of financial statements, bookkeeping, and reconciliation of accounts</li>
+                            <li>Assisted in managing QuickBooks and ODOO cloud accounting systems for clients</li>
+                            <li>Collaborated with senior accountants to provide consultancy services to small and medium enterprises</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>AliYare Shop</h3>
+                        <span class="date">2023</span>
+                        <ul>
+                            <li>Handled daily sales transactions using Point of Sale (POS) systems</li>
+                            <li>Maintained accurate cash records</li>
+                            <li>Managed purchase invoices, sales receipts, and supplier accounts</li>
+                            <li>Provided customer support and maintained accurate product and payment records</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Al-Iqra Primary and Secondary School</h3>
+                        <span class="date">2024 - 2025</span>
+                        <ul>
+                            <li>Delivered engaging lessons to primary and secondary students in Mathematics and English</li>
+                            <li>Managed classroom activities and maintained a positive learning environment</li>
+                            <li>Assessed student performance and provided feedback to support academic growth</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Professional Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Odoo (ERP) Specialist</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-skill="90"></div>
+                    </div>
+                    <p>Experienced in implementing and managing Odoo ERP solutions</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Excel Data Analysis</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-skill="95"></div>
+                    </div>
+                    <p>Skilled in analyzing and visualizing data using Excel</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Computerized Accounting using QuickBooks</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-skill="85"></div>
+                    </div>
+                    <p>Proficient in using QuickBooks for accounting and bookkeeping</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Completed ACCA Financial Accounting (FA)</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-skill="80"></div>
+                    </div>
+                    <p>Successfully completed ACCA FA with a strong understanding of accounting principles</p>
+                </div>
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Proficient in Microsoft Office</h3>
+                    <div class="skill-bar">
+                        <div class="skill-progress" data-skill="90"></div>
+                    </div>
+                    <p>Skilled in creating professional documents, presentations, and spreadsheets</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Education</h2>
+            </div>
+            <div class="education-cards">
+                <div class="education-card fade-in">
+                    <div class="education-card-header">
+                        <h3>Bachelor's Degree</h3>
+                        <div class="institution">Somali National University</div>
+                    </div>
+                    <div class="education-card-body">
+                        <p><strong>Major:</strong> Accounting and Finance</p>
+                        <p>Comprehensive study of financial principles, accounting practices, and business management.</p>
+                        <span class="year">Completed</span>
+                    </div>
+                </div>
+                <div class="education-card fade-in">
+                    <div class="education-card-header">
+                        <h3>ACCA Certification</h3>
+                        <div class="institution">Association of Chartered Certified Accountants</div>
+                    </div>
+                    <div class="education-card-body">
+                        <p><strong>Status:</strong> Student Candidate</p>
+                        <p>Currently pursuing ACCA certification to enhance professional qualifications and expertise.</p>
+                        <span class="year">In Progress</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages" class="languages">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Languages</h2>
+            </div>
+            <div class="languages-grid">
+                <div class="language-item fade-in">
+                    <i class="fas fa-language"></i>
+                    <h3>Somali</h3>
+                    <p class="proficiency">Native</p>
+                </div>
+                <div class="language-item fade-in">
+                    <i class="fas fa-language"></i>
+                    <h3>English</h3>
+                    <p class="proficiency">Professional Proficiency</p>
+                </div>
+                <div class="language-item fade-in">
+                    <i class="fas fa-language"></i>
+                    <h3>Arabic</h3>
+                    <p class="proficiency">Professional Proficiency</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-info fade-in">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>mohamed48980@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+252 061 0 71 46 32</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Hawlwadaag, Mogadishu</span>
+                </div>
+            </div>
+            <div class="social-links fade-in">
+                <a href="#" class="social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="social-link">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Mohamed Mahad Muse. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        CV download started! Check your downloads folder.
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                const icon = this.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+            
+            // Close menu when clicking on a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                });
+            });
+        });
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('active');
+            } else {
+                scrollTopBtn.classList.remove('active');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Fade In Animation on Scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        function checkFade() {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('show');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkFade);
+        window.addEventListener('load', checkFade);
+
+        // Timeline Animation on Scroll
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        function checkTimeline() {
+            timelineItems.forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+                const itemVisible = 150;
+                
+                if (itemTop < window.innerHeight - itemVisible) {
+                    item.classList.add('show');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkTimeline);
+        window.addEventListener('load', checkTimeline);
+
+        // Skill Progress Bar Animation
+        const skillBars = document.querySelectorAll('.skill-progress');
+        
+        function animateSkills() {
+            skillBars.forEach(bar => {
+                const barTop = bar.getBoundingClientRect().top;
+                const barVisible = 150;
+                
+                if (barTop < window.innerHeight - barVisible) {
+                    const skill = bar.getAttribute('data-skill');
+                    bar.style.width = skill + '%';
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', animateSkills);
+        window.addEventListener('load', animateSkills);
+
+        // Header Scroll Effect
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 100) {
+                header.style.padding = '0.5rem 0';
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '1rem 0';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Download CV Button
+        // Download CV Button
+// Alternative Download CV Button
+// Download CV Button
+document.getElementById('downloadCV').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const toast = document.getElementById('toast');
+    
+    // Create download link with properly encoded path and filename
+    const link = document.createElement('a');
+    
+    // Path to your CV file in the assets folder (URL-encoded for apostrophe and space)
+    link.href = "./assets/Mohamed%27s%20CV.pdf";
+    link.download = "Mohamed's CV.pdf";
+    link.style.display = 'none';
+    
+    // Add to DOM, click, then remove
+    document.body.appendChild(link);
+    
+    // Show loading message
+    toast.textContent = 'Downloading CV...';
+    toast.classList.add('show');
+    
+    // Trigger download
+    link.click();
+    
+    // Clean up and show success message
+    setTimeout(() => {
+        document.body.removeChild(link);
+        toast.textContent = 'CV download started!';
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2000);
+    }, 500);
+});
+        // Add typing effect to hero subtitle
+        const subtitle = document.querySelector('.hero .subtitle');
+        const originalText = subtitle.textContent;
+        subtitle.textContent = '';
+        let charIndex = 0;
+        
+        function typeText() {
+            if (charIndex < originalText.length) {
+                subtitle.textContent += originalText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 50);
+            }
+        }
+        
+        // Start typing effect when page loads
+        window.addEventListener('load', function() {
+            setTimeout(typeText, 1000);
+        });
+    </script>
+</body>
+</html>
